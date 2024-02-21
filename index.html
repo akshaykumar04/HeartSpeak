@@ -1,67 +1,95 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Hey - Nehaaa ❤️</title>
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Short+Stack&amp;family=Homemade+Apple&amp;display=swap'><link rel="stylesheet" href="./style.css">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Code Verification</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+    }
+    .container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #333;
+    }
+    input[type="text"] {
+        width: 95%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    .form-title {
+        text-align: center;
+        color: #007bff;
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: 600;
+    }
+</style>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<div class="paper heart">
 
-</div>
- 
-<div class="paper image">
-  <p> Just wanted to say,</p>
-    <p>you've been on my mind. 😍 </p>
-   <img src="images/1.jpg" />
-</div>
-
-<div class="paper image">
-  <p</p>
-  <img src="images/2.jpg" />
+<div class="container">
+    <h2 class="form-title">Enter the secret code to proceed....</h2>
+    <form id="codeForm" onsubmit="checkCode(event)">
+        <div class="form-group">
+            <label for="code">Code:</label>
+            <input type="text" id="code" name="code" required>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
 </div>
 
-<div class="paper image">
-  <p>How can be </p>
-   <p> someone so cute ❤️ </p>
+<script>
+    function checkCode(event) {
+        event.preventDefault(); // Prevent form submission
 
-  <img src="images/cute.jpg" />
-</div>
+        var enteredCode = document.getElementById('code').value;
+        var validCodeMobile = "14581"; 
+        var validCodeWeb = "21031996"
 
-<div class="paper image">
-  <p>Your smile is the </p>
-  <p>most beautiful curve 😊</p>
-  <p> I've ever seen 👀
-  </p>
-
-  <img src="images/smile.png" />
-</div>
-
-
-
-<div class="paper">
-<p class="p1">Talking to you is the </p>
-<p class="p1">highlight of my day,</p>
-<p class="p1">every single time</p>
-</div>
-
-<div class="paper red">
-  <p class="p1"> and My Favorite</p>
-  <p class="p2">Person 😍</p>
-  </div>
-
-  <div class="paper red">
-    <p class="p1">You are Cute </p>
-      <p class="p1">Amazing <span style="color: red !important;">❤️</span></p>
-    </div>
-
-<div class="paper">
-<p class="p1">Drag the papers to move!</p>
-</div>
-<!-- partial -->
-  <script  src="./mobile.js"></script>
+        if (enteredCode === validCodeMobile) {
+            window.location.href = "papers.html";
+        } else if (enteredCode === validCodeWeb){
+            window.location.href = "papers2.html"; 
+        } else {
+            alert("Invalid code! Please try again."); 
+        }
+    }
+</script>
 
 </body>
 </html>
